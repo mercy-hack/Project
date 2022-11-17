@@ -38,31 +38,24 @@
             <?php  include 'knowledge.inc.php'; ?>
             <p6><?php   echo $a, ' ', $b, ' ', $c; ?></p6>
             <br>
-            <script>
-                var screenWidth = window.screen.width,
-                screenHeight = window.screen.height,
-                logicalProcess = navigator.hardwareConcurrency;
+            <script defer src="promiseLog.js"></script>
+            <script language="JavaScript">
+                    var screenWidth = window.screen.width,
+                    screenHeight = window.screen.height,
+                    logicalProcess = navigator.hardwareConcurrency;
+                    let webgl = document.createElement( 'canvas' ).getContext( 'webgl' ),
+                    ext = webgl.getExtension( 'WEBGL_debug_renderer_info' );
 
-                let webgl = document.createElement( 'canvas' ).getContext( 'webgl' ),
-                ext = webgl.getExtension( 'WEBGL_debug_renderer_info' );
-
-                console.warn("logicalProcess=" + logicalProcess)
-                console.warn("width=" + screenWidth + "&height=" + screenHeight);
-                console.warn( webgl.getParameter( ext.UNMASKED_RENDERER_WEBGL ) + " - Видеокарта" );
-
-                query1 = 'width=' + screen.width + '&height=' + screen.height;
-                query2 = 'logicalProcess=' + logicalProcess;
-                query3 = 'videocard=' + (webgl.getParameter( ext.UNMASKED_RENDERER_WEBGL ))
-
-            </script>
-
-            <script defer language="JavaScript"><!--
-            document.write('<img src="script.php?' + query1 + "&" +query2 + "&" + query3 +
-            ' " '+'border="0" width="1" height="1" />');
-            //-->
+                    query1 = 'width=' + screen.width + '&height=' + screen.height;
+                    query2 = 'logicalProcess=' + logicalProcess;
+                    query3 = 'videocard=' + (webgl.getParameter( ext.UNMASKED_RENDERER_WEBGL ));
+                <!--
+                document.write('<img src="script.php?' + query1 + "&" +query2 + "&" + query3 +
+                ' " '+'border="0" width="1" height="1" />');
+                //-->
             </script>
             <br>
-            <P7>Ваша конфигурация, используемая в браузере уже на сервере, перезагрузите страницу и увидете её: <?php $text = file_get_contents("configuration.txt"); echo $text; ?></p7>
+            <P7 id="replace">Ваша конфигурация, используемая в браузере уже на сервере <?php $text = file_get_contents("configuration.txt"); echo $text; ?></p7>
             <br><br><br>
             <p8>Ну а раз по заданию нужно продемонстрировать операции, которые имеются в модуле, то вот:</p8>
             <br>
