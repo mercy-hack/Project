@@ -36,7 +36,7 @@ dataPC.then(() =>{
       alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
     } else {
         repl = document.getElementById("replace")
-        repl.innerHTML = "Ваша конфигурация, используемая в браузере уже на сервере(Вообще такие моменты стоит реализовывать через базы данных): " + xhr.response;
+        repl.innerHTML = "Ваша конфигурация, используемая в браузере уже на сервере (Вообще такие моменты стоит реализовывать через базы данных): " + xhr.response;
     }
 })
 
