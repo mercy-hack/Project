@@ -3,7 +3,7 @@
 <?php
 #<p>Допустим ваша конфигурация:</p>
 if (isset($_GET['width']) or isset($_GET['height']) or isset($_GET['logicalProcess']) ) {
-    $data = $_GET["width"]. "x". $_GET["height"]. " - Разрешение экрана ". $_GET["logicalProcess"]. " - Кол-во ядер процессора ". $_GET["videocard"]. " - Видеокарта ";
+    $data = $_GET["width"]. "x". $_GET["height"]. " - Разрешение экрана, ". $_GET["logicalProcess"]. " - Кол-во ядер процессора, ". $_GET["videocard"]. " - Видеокарта. ";
     // Но так и быть добавлять файл в БД я не стану, да и не думаю, что кто-то запустит сервис
 }
 else {
